@@ -1,7 +1,7 @@
 // import { Navbar } from "../components/navbar";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { Landing } from "../components/Landing";
-import NFT from "../components/landing/nft";
+import NFT from "../components/Landing/nft";
 // import styles from "../styles/Home.module.css";
 import { useFetchNfts } from "../hooks/useFetchNfts";
 // import { useFetchAuctions } from "../hooks/useAuction";

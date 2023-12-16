@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Web3Auth } from "@web3auth/modal";
 import { SafeEventEmitterProvider } from "@web3auth/base";
-import { DAppClient } from "@airgap/beacon-sdk";
+// import { DAppClient } from "@airgap/beacon-sdk";
 
 interface walletInfoType {
   web3auth: Web3Auth | null;
   web3authprovider: SafeEventEmitterProvider | null;
-  beacondappclient: DAppClient | null;
+  beacondappclient: any;
   userAddress: string;
 }
 

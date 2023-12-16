@@ -15,13 +15,13 @@ import styles from "../../styles/Home.module.css";
 import { useRef, useState } from "react";
 import { AiFillFileAdd, AiFillEdit } from "react-icons/ai";
 import { uploadImage, listSingleFixedFile } from "../../utils/api/nft";
-import ImageComponent from "../../components/create/ImageComponent";
+import ImageComponent from "../../components/Create/ImageComponent";
 import { createCollection, listAuction } from "../../utils/api/nft";
-import DatePicker from "../../components/create/DatePicker";
+import DatePicker from "../../components/Create/DatePicker";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Player } from "video-react";
-import ImagePreviewer from "../../components/create/ImagePreview";
+import ImagePreviewer from "../../components/Create/ImagePreview";
 import { useRouter } from "next/router";
 
 enum FileType {
