@@ -1,4 +1,4 @@
-import { Flex, Img, Text, Button } from "@chakra-ui/react";
+import { Flex, Img, Text, Button, Spinner } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import styles from "../../styles/Home.module.css";
 import { useEffect, useState } from "react";
@@ -68,6 +68,7 @@ export default function NFT() {
   const [nftData, setNftData] = useState<any>();
   const [swapInfo, setswapInfo] = useState<any>();
   const [file, setFile] = useState<any>();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchNft = async () => {
@@ -112,7 +113,10 @@ export default function NFT() {
   const buyNFT = async (isweb3Auth: boolean) => {
     try {
       //   const buyTx = await buyNFT(nftData.price, "ATF", nftData.swapId);
+      setLoading(true);
       await buy(nftData.price, "ATF", nftData.swapId, nftData.id);
+      setLoading(false);
+      router.push("/");
     } catch (err) {
       console.log(err);
     }
@@ -257,11 +261,15 @@ export default function NFT() {
           </Flex>
           <Button
             // onClick={() => uploadImageToIpfs(nftData?.images[0] as string)}
-            onClick={() => buyNFT(true)}
+            onClick={() => {
+              if (!loading) {
+                buyNFT(true);
+              }
+            }}
             color='#2B2C2E'
             mt={10}
           >
-            Buy
+            {loading ? <Spinner /> : "Buy"}
           </Button>
         </Flex>
       </Flex>

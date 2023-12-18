@@ -3,12 +3,13 @@ import dynamic from "next/dynamic";
 import { Web3Auth } from "@web3auth/modal";
 import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
 import { useEffect } from "react";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 const web3auth =
   typeof window !== "undefined"
     ? new Web3Auth({
         clientId:
-          "BAwMiesu2p3jffe37deWlVIMB3gEDbYhXA-JBnzSH8eBS7fbj-jOJG65evOatQace4qdAgvsRjrxm2koyhVwc1U", // get it from Web3Auth Dashboard
+          "BEi1u_ON9wcilchv0zM4EI_eH3-WJkuyX6B6DAaZTCxLed6HNmn22lhpU99bOKpuYKmJLeJ5-7j9UR8dGdyxlfM", // get it from Web3Auth Dashboard
         web3AuthNetwork: "testnet",
         chainConfig: {
           chainNamespace: "other", // for all non EVM and SOLANA chains, use "other"
@@ -33,16 +34,19 @@ typeof window !== "undefined"
 
 //   web3auth?.connectTo()
 export default function AppWrap({ Component, pageProps }: any) {
+  const value = useLocalStorage();
   useEffect(() => {
     const initModal = async () => {
       try {
-        await web3auth?.initModal();
+        if (value) {
+          await web3auth?.initModal();
+        }
       } catch (err) {
         console.log(err);
       }
     };
     initModal();
-  }, []);
+  }, [value]);
   return (
     <>
       {/* {!user.wallet_instance ? ( */}

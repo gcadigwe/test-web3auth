@@ -11,6 +11,7 @@ import { useFetchNfts } from "../hooks/useFetchNfts";
 // import { useTransactions } from "../hooks/useTransactions";
 import SSOComponent from "../components/sso/SSOComponent";
 import { useRouter } from "next/router";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 function App() {
   const { nfts } = useFetchNfts();
@@ -21,10 +22,12 @@ function App() {
   console.log("nft", nfts);
   const router = useRouter();
   const { session, type } = router.query;
+
   return (
     <>
       <Box bg='#131517' minH='100vh'>
-        {/* <SSOComponent sessionId={session as string} type={type as string} /> */}
+        <SSOComponent sessionId={session as string} type={type as string} />
+
         <Flex
           minH={{
             sm: "70vh",
