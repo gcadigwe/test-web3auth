@@ -50,7 +50,15 @@ const SSOComponent = ({
     }
   }, [sessionId]);
 
-  return <div style={{ color: "white" }}>sso</div>;
+  return (
+    <div
+      style={{
+        display: "none",
+      }}
+    >
+      sso
+    </div>
+  );
 };
 
 export default SSOComponent;
