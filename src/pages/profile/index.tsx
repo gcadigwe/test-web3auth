@@ -10,7 +10,7 @@ import { RootState } from "../../state/store";
 // import MintedNFT from "../../components/profile/minted_nft";
 import { useFetchNFTByUser } from "../../hooks/useFetchNfts";
 import { INFTDATA } from "../nft/[id]";
-import NFT from "../../components/landing/nft";
+// import NFT from "../../components/landing/nft";
 import { MdOutlineAddAPhoto } from "react-icons/md";
 
 interface nfts {
@@ -190,7 +190,7 @@ export default function Profile() {
             <p>Activity</p>
           </TabPanel>
           <TabPanel>
-            {nfts &&
+            {/* {nfts &&
               nfts?.map((nft) => (
                 <NFT
                   nft={nft}
@@ -199,7 +199,7 @@ export default function Profile() {
                   remove={true}
                   // refresh={() => setRefresh(!refresh)}
                 />
-              ))}
+              ))} */}
           </TabPanel>
           <TabPanel>
             <p>offers</p>
