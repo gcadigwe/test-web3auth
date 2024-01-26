@@ -13,5 +13,7 @@ module.exports = {
     TZKT_API: process.env.TZKT_API,
     ENCRYPTION_KEY_STRING: process.env.ENCRYPTION_KEY_STRING,
     API_URL: process.env.API_URL,
+    WERT_PARTNER_ID: process.env.WERT_PARTNER_ID,
+    WERT_ORIGIN: process.env.WERT_ORIGIN,
   },
 };
