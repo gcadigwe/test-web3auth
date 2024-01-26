@@ -2,9 +2,13 @@ import Wert from "@/components/WertModal";
 import { RootState } from "@/state/store";
 import { useSelector } from "react-redux";
 import { Flex, useDisclosure } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import SSOComponent from "@/components/sso/SSOComponent";
 
 export default function BuyToken() {
   const wallet = useSelector((state: RootState) => state.wallet);
+  const router = useRouter();
+  const { session, type } = router.query;
 
   return (
     <Flex
@@ -18,7 +22,7 @@ export default function BuyToken() {
       pb={10}
       //   px={4}
     >
-      {" "}
+      <SSOComponent sessionId={session as string} type={type as string} />
       <Wert isWalletConect={wallet.userAddress ? true : false} />{" "}
     </Flex>
   );
