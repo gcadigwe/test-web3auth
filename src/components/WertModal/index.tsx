@@ -75,13 +75,20 @@ const Wert = ({ isWalletConect }: any) => {
           <ModalBody w='100%' px={0}>
             <Box overflowX={"hidden"} w='100%' h='500px'>
               {!isWalletConect ? (
-                <Flex flexDirection={"column"} alignItems='center'>
-                  <Text>Connect Web3 Wallet</Text>
-                  <Text>
+                <Flex
+                  flexDirection={"column"}
+                  alignItems='center'
+                  mt={16}
+                  gap={2}
+                  fontFamily='gelionmd'
+                  px={6}
+                >
+                  <Text fontWeight={"bold"}>Connect Web3 Wallet</Text>
+                  <Text textAlign={"center"}>
                     A connected Web3 wallet is needed to purchase ATF tokens and
                     interact with the shop.
                   </Text>
-                  <Flex>
+                  <Flex fontFamily='gelionmd'>
                     <Button onClick={() => login()}>
                       Connect Web3Auth Wallet
                     </Button>
