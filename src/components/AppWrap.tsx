@@ -4,6 +4,7 @@ import { Web3Auth } from "@web3auth/modal";
 import { OpenloginAdapter } from "@web3auth/openlogin-adapter";
 import { useEffect } from "react";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { ChainIds } from "@taquito/taquito";
 
 const web3auth =
   typeof window !== "undefined"
@@ -18,6 +19,7 @@ const web3auth =
           blockExplorer: "https://tzstats.com",
           ticker: "XTZ",
           tickerName: "Tezos",
+          chainId: "NetXnHfVqm9iesp",
         },
       })
     : null;
@@ -26,6 +28,7 @@ const openloginAdapter = new OpenloginAdapter({
   adapterSettings: {
     uxMode: "popup",
   },
+  web3AuthNetwork: "testnet",
 });
 
 typeof window !== "undefined"

@@ -70,9 +70,9 @@ const Wert = ({ isWalletConect }: any) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent w='100%' px={0}>
-          <ModalHeader>Buy ATF Token</ModalHeader>
+          {/* <ModalHeader>Buy ATF Token</ModalHeader> */}
           <ModalCloseButton />
-          <ModalBody w='100%' px={0}>
+          <ModalBody w='100%' px={0} mt={10}>
             <Box overflowX={"hidden"} w='100%' h='500px'>
               {!isWalletConect ? (
                 <Flex
@@ -108,7 +108,8 @@ const Wert = ({ isWalletConect }: any) => {
                     address: wallet.userAddress,
 
                     // width: 400,
-                    height: 500,
+                    height: 600,
+
                     listeners: {
                       error: (name: any, message: any) => console.log(name),
                       "payment-status": async (tx: String) => {
